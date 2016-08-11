@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    [v-cloak] {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello World</h1>
+  <div class="main-app" v-cloak>
+    <m-hello :content=name></m-hello>
+    <m-items :items=names></m-items>
+    <input placeholder="Enter your name" @keydown.enter="addName" v-model="newName">
+  </div>
+  <script id="hello" type="x-template">
+    <p>Hola como estamos {{content}}</p>
+  </script>
+  <script id="list" type="x-template">
+    <ul>
+      <li v-for="item in items">{{item}}</li>
+    </ul>
+  </script>
+  <script src="https://npmcdn.com/vue@1.0.26/dist/vue.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
